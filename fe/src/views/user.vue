@@ -169,7 +169,7 @@ export default {
   },
   methods: {
     getReq () {
-      axios.get('http://localhost:3000/api/user', {
+      axios.get('/api/user', {
         user: 'getMan'
       })
         .then((r) => {
@@ -180,7 +180,7 @@ export default {
         })
     },
     postReq () {
-      axios.post('http://localhost:3000/api/user', {
+      axios.post('/api/user', {
         // user: 'postMan'
         name: '가정', age: 333
       })
@@ -192,7 +192,7 @@ export default {
         })
     },
     putReq () {
-      axios.put('http://localhost:3000/api/user/', {
+      axios.put('/api/user/', {
         user: 'putMan'
       })
         .then((r) => {
@@ -203,7 +203,7 @@ export default {
         })
     },
     deleteReq () {
-      axios.delete('http://localhost:3000/api/user')
+      axios.delete('/api/user')
         .then((r) => {
           this.deleteModel = JSON.stringify(r.data)
         })
@@ -219,7 +219,7 @@ export default {
     postUser () {
       // console.log(this.userName, this.userAge)
       this.dialog = false
-      axios.post('http://localhost:3000/api/user', {
+      axios.post('/api/user', {
         name: this.userName, age: this.userAge
       })
         .then((r) => {
@@ -232,7 +232,7 @@ export default {
         })
     },
     getUsers () {
-      axios.get('http://localhost:3000/api/user')
+      axios.get('/api/user')
         .then((r) => {
           // console.log(r.data)
           this.users = r.data.users
@@ -249,7 +249,7 @@ export default {
     },
     putUser () {
       this.dialog = false
-      axios.put(`http://localhost:3000/api/user/${this.putId}`, {
+      axios.put(`/api/user/${this.putId}`, {
         name: this.userName, age: this.userAge
       })
         .then((r) => {
@@ -261,7 +261,7 @@ export default {
         })
     },
     delUser (id) {
-      axios.delete(`http://localhost:3000/api/user/${id}`)
+      axios.delete(`/api/user/${id}`)
         .then((r) => {
           this.pop('사용자 삭제 완료')
           this.getUsers()
