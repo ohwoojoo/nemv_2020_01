@@ -35,3 +35,46 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
+
+const mongoose = require('mongoose')
+// const User = çrequire('./models/users')
+mongoose.connect('mongodb://localhost:27017/nemv', {
+   useNewUrlParser: true,
+   useUnifiedTopology: true
+  }, (err) => {
+  if (err) return console.error(err)
+  console.log('mongoose connected!')
+})
+
+// const userSchema = new mongoose.Schema({
+//   name: { type: String, default: ''},
+//   age: {type: Number, default: 1}
+// })
+
+// const User = mongoose.model('User', userSchema)
+
+
+// // C
+// User.create({ name: 'A' })
+//   .then(r => console.log(r))
+//   .catch(e => console.error(e))
+
+// // R
+// User.find()
+//   .then(r => console.log(r))
+//   .catch(e => console.error(e))
+
+// // U
+// User.updateOne( { _id: '5e1430988216cf0f41eaa24d'}, { $set: { age: 1 } })
+// .then(r => {
+//   console.log(r)
+//   console.log('Updated')
+//   return User.find()
+// })
+// .then(r => console.log(r))
+// .catch(e => console.error(e))
+
+// //D
+// User.deleteOne({ name: 'A' })
+//   .then(r => console.log(r))
+//   .catch(e => console.error(e))
