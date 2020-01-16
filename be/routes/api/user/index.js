@@ -31,7 +31,7 @@ router.post('/', (req, res, next) => {
   // console.log(req.query)
   // console.log(req.body)
   // res.send({ success: true, msg: 'post OK' })
-  const { name, age } = req.body
+  const { name, age } = req.body  // req.body에 name과 age를 받음
   const u = new User({
     name: name,
     age: age
@@ -48,7 +48,7 @@ router.post('/', (req, res, next) => {
     })
 });
 
-router.put('/', (req, res, next) => {
+router.put('/:id', (req, res, next) => {
   // console.log(req.query)
   // console.log(req.body)
   // res.send({ success: true, msg: 'put OK' })
@@ -63,7 +63,7 @@ router.put('/', (req, res, next) => {
   })
 });
 
-router.delete('/', (req, res, next) => {
+router.delete('/:id', (req, res, next) => {
   // console.log(req.query)
   // console.log(req.body)
   // res.send({ success: true, msg: 'delete OK' })

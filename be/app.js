@@ -37,13 +37,16 @@ app.use(function(err, req, res, next) {
 module.exports = app;
 
 const mongoose = require('mongoose')
-// const User = çrequire('./models/users')
+const User = require('./models/users')
 mongoose.connect('mongodb://localhost:27017/nemv', {
    useNewUrlParser: true,
    useUnifiedTopology: true
   }, (err) => {
   if (err) return console.error(err)
   console.log('mongoose connected!')
+  // User.deleteMany()
+  // .then(r => console.log(r))
+  // .catch(e => console.error(e))
 })
 
 // const userSchema = new mongoose.Schema({
@@ -65,7 +68,7 @@ mongoose.connect('mongodb://localhost:27017/nemv', {
 //   .catch(e => console.error(e))
 
 // // U
-// User.updateOne( { _id: '5e1430988216cf0f41eaa24d'}, { $set: { age: 1 } })
+// User.updateOne( { _id: '5e1fe55b5e93700bb482822e'}, { $set: { age: 1 } })
 // .then(r => {
 //   console.log(r)
 //   console.log('Updated')
