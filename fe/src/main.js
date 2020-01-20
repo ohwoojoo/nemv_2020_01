@@ -7,6 +7,8 @@ import '@babel/polyfill'
 
 Vue.config.productionTip = false
 
+Vue.prototype.$apiRootPath = process.env.NODE_ENV !== 'production' ? 'http://localhost:3000/api/' : '/api/'
+
 new Vue({
   router,
   store,

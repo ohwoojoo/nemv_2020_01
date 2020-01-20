@@ -1,5 +1,6 @@
 <template>
   <v-app>
+    <h1>{{this.$apiRootPath}}</h1>
     <v-content>
       <router-view/>
     </v-content>
