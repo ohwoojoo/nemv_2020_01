@@ -21,13 +21,14 @@ module.exports = {
 
   // 서버에 실제 보낼 때
   deploy : {
-    production : {
-      user : 'node',
-      host : '212.83.163.1',
+    pr : {
+      user : 'centos',
+      host : '52.78.160.30',
+      key : './nemvKey.pem',
       ref  : 'origin/master',
-      repo : 'git@github.com:repo.git',
-      path : '/var/www/production',
-      'post-deploy' : 'npm install && pm2 reload ecosystem.config.js --env production'
+      repo : 'git@github.com:ohwoojoo/nemv_2020_01.git',
+      path : '/var/www/nemv_2020_01',
+      'post-deploy' : 'yarn pm2'
     }
   }
 };
