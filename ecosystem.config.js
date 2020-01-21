@@ -28,7 +28,7 @@ module.exports = {
       ref  : 'origin/master',
       repo : 'git@github.com:ohwoojoo/nemv_2020_01.git',
       path : '/var/www/nemv_2020_01',
-      'post-deploy' : 'yarn pm2'
+      'post-deploy' : 'sudo yarn pm2'
     }
   }
 };

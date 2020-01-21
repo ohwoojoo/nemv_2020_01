@@ -105,3 +105,6 @@ dist
 
 # keyPair
 *.pem
+
+# config
+config/

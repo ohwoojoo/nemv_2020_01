@@ -34,11 +34,15 @@ app.use(function(err, req, res, next) {
   res.send({ msg: err.message })
 });
 
-module.exports = app;
-
 const mongoose = require('mongoose')
 const User = require('./models/users')
-mongoose.connect('mongodb://localhost:27017/nemv', {
+
+console.log(`${process.env.NODE_ENV} mode started!`)
+
+const cfg = require('../config')
+console.log(cfg)
+
+mongoose.connect(cfg.dbUrl, {
    useNewUrlParser: true,
    useUnifiedTopology: true
   }, (err) => {
@@ -82,5 +86,4 @@ mongoose.connect('mongodb://localhost:27017/nemv', {
 //   .then(r => console.log(r))
 //   .catch(e => console.error(e))
 
-
-console.log(process.env.NODE_ENV)
+module.exports = app;
