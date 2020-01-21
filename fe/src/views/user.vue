@@ -2,6 +2,7 @@
 <template>
 <v-container grid-list-md text-xs-center>
     <v-layout row wrap>
+      <span>{{test}}<span>
         <!-- <v-flex xs12 sm3>
             <v-card>
                 <v-card-title>
@@ -158,7 +159,8 @@ export default {
       ],
       snackbar: false,
       sbMsg: '',
-      putId: ''
+      putId: '',
+      test: 'TEST'
     }
   },
   mounted () {
