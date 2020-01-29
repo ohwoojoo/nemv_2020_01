@@ -88,17 +88,17 @@ mongoose.connect(cfg.dbUrl, {
 
 module.exports = app;
 
-var jwt = require('jsonwebtoken');
-const key = '키 입니다.'
-var token = jwt.sign({ id: 'aaa', email: 'aaa@abc.com' }, key);
+// var jwt = require('jsonwebtoken');
+// const key = '키 입니다.'
+// var token = jwt.sign({ id: 'aaa', email: 'aaa@abc.com' }, key);
 // console.log(token)
 
-// verify a token symmetric - synchronous
-var decoded = jwt.verify(token, key) /* , (err) => {
-  if(err) return console.log(err)
-}); */
-// console.log(decoded) // bar
-// console.log(new Date(decoded.iat * 1000))
+// // verify a token symmetric - synchronous
+// var decoded = jwt.verify(token, key) /* , (err) => {
+//   if(err) return console.log(err)
+// }); */
+// // console.log(decoded) // bar
+// // console.log(new Date(decoded.iat * 1000))
 
 
 // // callback 함수 만드는 법
@@ -169,22 +169,22 @@ var decoded = jwt.verify(token, key) /* , (err) => {
 //   }
 // })
 
-const signToken = (u, k) => {
-  return new Promise((resolve, reject) => {
-    jwt.sign({ name: u.name, age: u.age }, k, (err, token) => {
-      if (err) reject(err)
-      resolve(token)
-    })
-  })
-}
-const verifyToken = (t, k) => {
-  return new Promise((resolve, reject) => {
-    jwt.verify(t, k, (err, v) => {
-      if (err) reject(err)
-      resolve(v)
-    })
-  })
-}
+// const signToken = (u, k) => {
+//   return new Promise((resolve, reject) => {
+//     jwt.sign({ name: u.name, age: u.age }, k, (err, token) => {
+//       if (err) reject(err)
+//       resolve(token)
+//     })
+//   })
+// }
+// const verifyToken = (t, k) => {
+//   return new Promise((resolve, reject) => {
+//     jwt.verify(t, k, (err, v) => {
+//       if (err) reject(err)
+//       resolve(v)
+//     })
+//   })
+// }
 
 // // 프라미스
 // let user

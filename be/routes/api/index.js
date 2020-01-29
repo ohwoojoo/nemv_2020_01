@@ -10,6 +10,8 @@ var router = express.Router();
 //   res.send({msg: 'user', a: 2})
 // });
 
+router.use('/sign', require('./sign'))
+
 // 미들웨어
 router.all('*', function(req, res, next) {
   // console.log(req.headers)
@@ -18,9 +20,8 @@ router.all('*', function(req, res, next) {
   next();
 });
 
-router.use('/test', require('./test'))
-router.use('/user', require('./user'))
-router.use('/sign', require('./sign'))
+// router.use('/test', require('./test'))
+// router.use('/user', require('./user'))
 // router.use('/check', require('./check'))
 
 /* GET home page. */
