@@ -9,7 +9,8 @@ module.exports = {
   dbUrl: 'mongodb://localhost:27017/nemv',
   admin: {
     id: 'admin',
-    pwd: '1234'
+    pwd: '1234',
+    name: '관리자'
   }
 };
 ```

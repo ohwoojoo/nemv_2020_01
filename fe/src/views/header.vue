@@ -1,11 +1,13 @@
 <template>
   <v-container>
-    <v-btn @click="headerSend">임의 헤더 전송</v-btn>
+    <!-- <v-btn @click="headerSend">임의 헤더 전송</v-btn>
     <v-btn @click="headerSend2">Auth 헤더 전송</v-btn>
     <v-btn @click="lsWrite">로컬스토리지 저장</v-btn>
     <v-btn @click="lsRead">로컬스토리지 읽기</v-btn>
     <v-btn @click="lsRemove">로컬스토리지 지우기</v-btn>
-    <v-btn @click="lsClear">로컬스토리지 전체삭제</v-btn>
+    <v-btn @click="lsClear">로컬스토리지 전체삭제</v-btn> -->
+    <v-btn @click="apiWithToken">토큰과 함께 전송</v-btn>
+    <v-btn @click="apiWithAlphabet">알파벳과 함께 전송</v-btn>
   </v-container>
 </template>
 <script>
@@ -39,6 +41,17 @@ export default {
     },
     lsClear () {
       localStorage.clear() // local storage의 모든 키 삭제
+    },
+    apiWithToken () {
+      const token = localStorage.getItem('token')
+      axios.get(`${this.$apiRootPath}test`, { headers: { Authorization: token } })
+        .then(r => console.log(r.data))
+        .catch(e => console.log(e.message))
+    },
+    apiWithAlphabet () {
+      axios.get(`${this.$apiRootPath}test`, { headers: { Authorization: 'abcdefg' } })
+        .then(r => console.log(r.data))
+        .catch(e => console.error(e.message))
     }
   }
 }
