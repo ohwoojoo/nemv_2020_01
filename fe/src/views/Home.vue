@@ -1,6 +1,7 @@
 <template>
   <div class="home">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <v-btn @click="test">CHANGE</v-btn>
   </div>
 </template>
 
@@ -12,6 +13,11 @@ export default {
   name: 'home',
   components: {
     HelloWorld
+  },
+  methods: {
+    test () {
+      this.$store.state.token = 444
+    }
   }
 }
 </script>

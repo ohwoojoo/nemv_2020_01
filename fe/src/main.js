@@ -7,7 +7,9 @@ import '@babel/polyfill'
 
 Vue.config.productionTip = false
 
+// 전역변수 등록
 Vue.prototype.$apiRootPath = process.env.NODE_ENV !== 'production' ? 'http://localhost:3000/api/' : '/api/'
+Vue.prototype.$gb = 333
 
 new Vue({
   router,

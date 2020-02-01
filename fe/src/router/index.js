@@ -23,12 +23,23 @@ const routes = [
   {
     path: '/header',
     name: '헤더',
-    component: () => import('../views/header.vue')
+    component: () => import('../views/header.vue'),
+    beforeEnter: (to, from, next) => {
+      // console.log(to)
+      // console.log(from)
+      if (!localStorage.getItem('token')) return next('block')
+      next()
+    }
   },
   {
     path: '/sign',
     name: '로그인',
     component: () => import('../views/sign.vue')
+  },
+  {
+    path: '/block',
+    name: '차단',
+    component: () => import('../views/block.vue')
   },
   {
     path: '*',
