@@ -35,7 +35,7 @@
             </v-btn>
           </template>
           <v-list>
-            <v-list-item v-if="!$store.state.token" @click="$router.push('sign')">
+            <v-list-item v-if="!$store.state.token" @click="$router.push('/sign')">
               <v-list-item-title>로그인</v-list-item-title>
             </v-list-item>
             <v-list-item v-else @click="signOut">
@@ -64,23 +64,44 @@ export default {
       items: [
         {
           icon: 'mdi-home',
-          title: '홈',
+          title: 'lv0',
           to: {
             path: '/'
           }
         },
         {
+          icon: 'mdi-home',
+          title: 'lv1',
+          to: {
+            path: '/lv1'
+          }
+        },
+        {
+          icon: 'mdi-home',
+          title: 'lv2',
+          to: {
+            path: '/lv2'
+          }
+        },
+        {
+          icon: 'mdi-home',
+          title: 'lv3',
+          to: {
+            path: '/lv3'
+          }
+        },
+        {
           icon: 'mdi-face',
-          title: '사용자관리',
+          title: '사용자 관리',
           to: {
             path: '/user'
           }
         },
         {
           icon: 'mdi-face',
-          title: 'header',
+          title: '페이지 관리',
           to: {
-            path: '/header'
+            path: '/page'
           }
         }
       ],

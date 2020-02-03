@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
-    <v-btn @click="test">CHANGE</v-btn>
+    <v-btn color="error" @click="delAll">데이터베이스 전체 삭제</v-btn>
   </div>
 </template>
 
@@ -15,8 +15,17 @@ export default {
     HelloWorld
   },
   methods: {
-    test () {
-      this.$store.state.token = 444
+    // test () {
+    //   this.$store.state.token = 444
+    // },
+    delAll () {
+      this.$axios.delete(`${this.$apiRootPath}test.delAll`, { headers: { Authorization: localStorage.getItem('token') } })
+        .then(r => {
+          this.msg = r.data.msg
+        })
+        .catch(e => {
+          this.msg = e.message
+        })
     }
   }
 }
